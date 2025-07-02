@@ -9,12 +9,13 @@ public class UserInterface {
     private Scanner scanner;
     private BookList books;
 
-    public UserInterface(Scanner scanner) {
+    public UserInterface(Scanner scanner, BookList books) {
         this.scanner = scanner;
-        this.books = new BookList();
+        this.books = books;
     }
 
     public void startUI() {
+        System.out.println("Welcome to Joaquim's Library Management System!");
         this.printOptions();
 
         while (true) {
@@ -28,19 +29,23 @@ public class UserInterface {
                 }
 
                 if (number == 1) {
-                    AdminInterface ai = new AdminInterface(this.scanner);
+                    AdminInterface ai = new AdminInterface(this.scanner, this.books);
                     ai.startAI();
                     break;
                 }
 
                 if (number == 2) {
                     this.books.printBooks();
-                    this.printOptions();
+                    System.out.println("-------------------------");
+                    System.out.println("1. Admin Login; 2. List; 3. Rent; 0. Quit");
+                    System.out.println("-------------------------");
                 }
 
             } else {
-                System.out.println("Please choose a valid number.");
-                this.printOptions();
+                System.out.println("Please choose a valid number:");
+                System.out.println("-------------------------");
+                System.out.println("1. Admin Login; 2. List; 3. Rent; 0. Quit");
+                System.out.println("-------------------------");
             }
 
         }

@@ -1,15 +1,13 @@
 package projects.librarymanagement;
 
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
-public class UserInterface {
+public class UserView {
 
     private Scanner scanner;
     private BookList books;
 
-    public UserInterface(Scanner scanner, BookList books) {
+    public UserView(Scanner scanner, BookList books) {
         this.scanner = scanner;
         this.books = books;
     }
@@ -29,21 +27,26 @@ public class UserInterface {
                 }
 
                 if (number == 1) {
-                    
+                    System.out.print("Enter username: ");
+                    String username = scanner.nextLine();
+                    System.out.print("Enter password: ");
+                    String password = scanner.nextLine();
+
+
                 }
 
                 if (number == 3) {
                     this.books.printBooks();
-                    System.out.println("---------------------------------------------------------------------");
-                    System.out.println("1. Login 2. Create Account; 3. List Books; 4. Admin Panel; 0. Quit");
-                    System.out.println("---------------------------------------------------------------------");
+                    System.out.println("------------------------------------------------");
+                    System.out.println("1. Login; 2. List Books; 3. Admin Panel; 0. Quit");
+                    System.out.println("------------------------------------------------");
                 }
 
             } else {
                 System.out.println("Please choose a valid number:");
-                System.out.println("-------------------------");
-                System.out.println("1. Admin Login; 2. List; 3. Rent; 0. Quit");
-                System.out.println("-------------------------");
+                System.out.println("------------------------------------------------");
+                System.out.println("1. Login; 2. List Books; 3. Admin Panel; 0. Quit");
+                System.out.println("------------------------------------------------");
             }
 
         }
@@ -52,9 +55,8 @@ public class UserInterface {
     public void printOptions() {
         System.out.println("-------------------------");
         System.out.println("1. Login");
-        System.out.println("2. Create Account");
-        System.out.println("3. List Available Books");
-        System.out.println("4. Admin Panel");
+        System.out.println("2. List Available Books");
+        System.out.println("3. Admin Panel");
         System.out.println("0. Quit");
         System.out.println("-------------------------");
     }

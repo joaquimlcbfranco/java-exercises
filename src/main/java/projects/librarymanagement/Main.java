@@ -14,7 +14,7 @@ public class Main {
         books.addBook("Pride and Prejudice", "Jane Austen", 1813);
         books.addBook("The Catcher in the Rye", "J.D. Salinger", 1951);
 
-        UserInterface ui = new UserInterface(scanner, books);
+        UserView ui = new UserView(scanner, books);
         ui.startUI();
     }
 }

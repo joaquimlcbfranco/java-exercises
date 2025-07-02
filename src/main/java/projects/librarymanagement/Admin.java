@@ -4,9 +4,9 @@ public class Admin extends Person {
 
     private int salary;
 
-    public Admin(String name, int age, String username, String password, int salary) {
-        super(name, age, username, password);
-        this.salary = salary;
+    public Admin(String name, int age, String username, String password, int userId) {
+        super(name, age, username, password, userId);
+        this.salary = 1000;
     }
 
     public int getSalary() {

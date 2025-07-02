@@ -15,7 +15,7 @@ public class UserInterface {
     }
 
     public void startUI() {
-        System.out.println("Welcome to Joaquim's Library Management System!");
+        System.out.println("Welcome to Joaquim's Library. Feel free to search or rent books!");
         this.printOptions();
 
         while (true) {
@@ -29,16 +29,14 @@ public class UserInterface {
                 }
 
                 if (number == 1) {
-                    AdminInterface ai = new AdminInterface(this.scanner, this.books);
-                    ai.startAI();
-                    break;
+                    
                 }
 
-                if (number == 2) {
+                if (number == 3) {
                     this.books.printBooks();
-                    System.out.println("-------------------------");
-                    System.out.println("1. Admin Login; 2. List; 3. Rent; 0. Quit");
-                    System.out.println("-------------------------");
+                    System.out.println("---------------------------------------------------------------------");
+                    System.out.println("1. Login 2. Create Account; 3. List Books; 4. Admin Panel; 0. Quit");
+                    System.out.println("---------------------------------------------------------------------");
                 }
 
             } else {
@@ -53,9 +51,10 @@ public class UserInterface {
 
     public void printOptions() {
         System.out.println("-------------------------");
-        System.out.println("1. Admin Login");
-        System.out.println("2. List Available Books");
-        System.out.println("3. Rent a Book");
+        System.out.println("1. Login");
+        System.out.println("2. Create Account");
+        System.out.println("3. List Available Books");
+        System.out.println("4. Admin Panel");
         System.out.println("0. Quit");
         System.out.println("-------------------------");
     }

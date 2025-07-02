@@ -11,21 +11,37 @@ public class BookList {
         this.books = new ArrayList<>();
     }
 
+    public int getId() {
+        return this.books.size();
+    }
+
+    public int getId(Book book) {
+        for (int i = 0; i < this.books.size(); i++) {
+            if (this.books.get(i).equals(book)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
     public void addBook(String name, String author, int year) {
-        if (!this.books.contains(new Book(name, author, year))) {
-            books.add(new Book(name, author, year));
+        Book newBook = new Book(this.getId(), name, author, year);
+        if (!this.books.contains(newBook)) {
+            books.add(new Book(this.getId(), name, author, year));
             return;
         }
 
         for (Book book : books) {
-            if (book.equals(new Book(name, author, year))) {
+            if (book.equals(newBook)) {
                 book.addStock();
             }
         }
     }
 
     public void printBooks() {
+
         books.stream()
-                .forEach(book -> book.toString());
+                .forEach(book -> System.out.println(book.toString()));
     }
 }

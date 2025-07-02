@@ -6,10 +6,14 @@ public abstract class Person {
     protected int age;
     protected String username;
     protected String password;
+    protected int userId;
 
-    public Person(String name, int age, String username, String password) {
+    public Person(String name, int age, String username, String password, int userId) {
         this.name = name;
         this.age = age;
+        this.username = username;
+        this.password = password;
+        this.userId = userId;
     }
 
     public String getName() {

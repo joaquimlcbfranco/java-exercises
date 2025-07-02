@@ -2,13 +2,15 @@ package projects.librarymanagement;
 
 public class Book {
 
+    private int id;
     private String name;
     private String author;
     private int year;
     private String rentTo;
     private int stock;
 
-    public Book(String name, String author, int year) {
+    public Book(int id, String name, String author, int year) {
+        this.id = id;
         this.name = name;
         this.author = author;
         this.year = year;
@@ -45,7 +47,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return this.name + " - " + this.author + ", " + this.year + ". Copies: " + this.stock;
+        return (this.id + 1) + ". " + this.name + " - " + this.author + ", " + this.year + ". Copies: " + this.stock;
     }
 
     @Override

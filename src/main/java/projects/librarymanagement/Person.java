@@ -1,11 +1,11 @@
 package projects.librarymanagement;
 
-public class Person {
+public abstract class Person {
 
-    private String name;
-    private int age;
-    private String username;
-    private String password;
+    protected String name;
+    protected int age;
+    protected String username;
+    protected String password;
 
     public Person(String name, int age, String username, String password) {
         this.name = name;

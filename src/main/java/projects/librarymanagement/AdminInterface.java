@@ -1,13 +1,17 @@
 package projects.librarymanagement;
 
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class AdminInterface {
 
     private Scanner scanner;
+    private BookList books;
 
-    public AdminInterface(Scanner scanner) {
+    public AdminInterface(Scanner scanner, BookList books) {
         this.scanner = scanner;
+        this.books = books;
     }
 
     public void startAI() {
@@ -16,13 +20,13 @@ public class AdminInterface {
             System.out.println("Username: ");
             String username = scanner.nextLine();
             if (username.equals("0")) {
-                new UserInterface(scanner).startUI();
+                new UserInterface(scanner, books).startUI();
                 break;
             }
             System.out.println("Password: ");
             String password = scanner.nextLine();
             if (password.equals("0")) {
-                new UserInterface(scanner).startUI();
+                new UserInterface(scanner, books).startUI();
                 break;
             }
 
